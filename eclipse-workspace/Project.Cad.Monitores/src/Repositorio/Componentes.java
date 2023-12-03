@@ -2,9 +2,14 @@ package Repositorio;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.Vector;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
@@ -13,6 +18,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+import javax.swing.text.MaskFormatter;
 
 public abstract class Componentes {
 	public static JLabel adicionarTitulo(String txt, int x, int y, int comprimento, int altura) {
@@ -27,8 +33,32 @@ public abstract class Componentes {
         
     }
 	
+	// CRIA UMA COMBOBOX.
+		public static JComboBox<String> adicionarComboBox(JFrame tela, ArrayList<String> texto, int x, int y,
+				int comprimento, int altura) {
+			Vector<String> arryText = new Vector<String>(texto);
+			JComboBox<String> jComboBox = new JComboBox<>(arryText);
+			jComboBox.setBounds(x, y, comprimento, altura);
+			jComboBox.setForeground(Color.MAGENTA);
+			tela.add(jComboBox);
+			return jComboBox;
+
+		}
 	
-	/*public static JLabel adicionarTitulo(JFrame tela, String txt, int x, int y, int comprimento, int altura) {
+	// CRIA UM MASCARA:
+		public static JFormattedTextField formatadoTxt(String texto, JTextField txt, JFrame tela, int x, int y,
+				int comprimento, int altura) throws ParseException {
+			MaskFormatter mascara = new MaskFormatter(texto);
+			JFormattedTextField txtFormatado = new JFormattedTextField(txt);
+			mascara.install(txtFormatado);
+			txtFormatado.setBounds(x, y, comprimento, altura);
+			tela.add(txtFormatado);
+			return txtFormatado;
+
+		}
+	
+	
+	public static JLabel adicionarTitulo(JFrame tela, String txt, int x, int y, int comprimento, int altura) {
 		ImageIcon icon = new ImageIcon("icons8-dragão-50.png");
 		JLabel jLabel = new JLabel(txt, icon, JLabel.LEFT);
 		jLabel.setBounds(x, y, comprimento, altura);
@@ -39,7 +69,7 @@ public abstract class Componentes {
 		tela.add(jLabel);
 		return jLabel;
 
-	}*/
+	}
 	
 	public static JMenu addJmenu(JFrame tela, JMenuBar menuBar, String txt, int x, int y, int comprimento, int altura) {
 	    if (menuBar == null) {
@@ -75,7 +105,7 @@ public abstract class Componentes {
 			return texto;
 		}
 	
-	/*public static JMenu addJmenu(JFrame tela, JMenuBar menuBar, String txt, int x, int y, int comprimento, int altura) {
+	public static JMenu addJmenu1(JFrame tela, JMenuBar menuBar, String txt, int x, int y, int comprimento, int altura) {
 		menuBar = new JMenuBar();
 		tela.setJMenuBar(menuBar);
 		JMenu menu = new JMenu(txt);
@@ -87,7 +117,7 @@ public abstract class Componentes {
 		menuBar.add(menu);
 
 		return menu;
-	}*/
+	}
 	// CRIAR JMENUITEM:
 		public static JMenuItem addMenuItem(JMenu menu, String txt) {
 			JMenuItem menuItem = new JMenuItem(txt);

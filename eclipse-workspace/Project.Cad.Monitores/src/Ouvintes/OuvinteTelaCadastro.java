@@ -4,7 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import Menssagens.MensageiroDeUsuario;
-import Pessoas.Coordenador;
 import Repositorio.Persistencia;
 import Telas.TelaDeCadastro;
 
@@ -15,7 +14,7 @@ public class OuvinteTelaCadastro<Usuario> implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String opcao = (String) telaCadastro.getOpcao().getSelectedItem();
-		String indentificadorCPF = (String) telaCadastro.getIndentificador().getText();
+		String identificadorCPF = (String) telaCadastro.getIdentificadoCPF().getText();
 		String nome  = telaCadastro.getNome().getText();
 		String email  = telaCadastro.getEmail().getText();
 		String password = telaCadastro.getSenha().getText();
