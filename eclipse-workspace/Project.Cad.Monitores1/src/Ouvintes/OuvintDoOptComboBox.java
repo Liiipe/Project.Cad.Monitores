@@ -12,7 +12,7 @@ public class OuvintDoOptComboBox implements ActionListener{
 	public OuvintDoOptComboBox(TelaDeCadastro telaCadastro) {
 		this.tela = telaCadastro;
 	}
-	//To ficando doido 
+	
 	
 	public void actionPerformed(ActionEvent e) {
 		String opt = (String) tela.getOpcao().getSelectedItem();
