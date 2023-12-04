@@ -14,7 +14,6 @@ public class OuvinteTeclaFecharEsc implements KeyListener{
 	JTextField txt;
 	JButton butao;
 	//Estoi loco hihihi 
-	//Estoi loco
 	public OuvinteTeclaFecharEsc(JFrame telas, JButton butao) {
 		this.telas = telas;
 		this.butao = butao;
