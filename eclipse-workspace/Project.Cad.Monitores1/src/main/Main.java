@@ -11,7 +11,6 @@ public class Main {
 	public static void main(String[] args) {
 		Persistencia persistencia = new Persistencia();
 		CentralDeTudo central = persistencia.recuperarCentral();
-		System.out.println("Estoi loko");
 		
 		//new	TelaPadrao("Kratos");
 		//TelaDeCadastro tela	= 	new TelaDeCadastro();
